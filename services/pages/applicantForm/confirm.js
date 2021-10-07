@@ -22,6 +22,8 @@ export default {
          */
         cancelApplicant() {
             this.$router.push('/applicantForm')
+            // history.back()
+            // this.$store.dispatch('applicantForm/cancelApplicant')
         },
         /**
          * if applicant confirm , create new applicant

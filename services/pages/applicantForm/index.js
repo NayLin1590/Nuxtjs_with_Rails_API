@@ -15,6 +15,7 @@ import {
     size,
 } from 'vee-validate/dist/rules'
 import { mapGetters } from 'vuex'
+import constants from '../../../constants'
 setInteractionMode('eager')
 extend('required', {
     ...required,
@@ -87,12 +88,23 @@ export default {
             },
             min: '1990-01-01',
             max: new Date(),
+            onezerozero: constants.ONEZEROZERO,
+            twofivezero: constants.TWOFIVEZERO,
         }
     },
     computed: {
         ...mapGetters({
             validateError: 'applicantForm/validateError',
         }),
+        ...mapGetters({
+            applicantData: 'applicantForm/applicantData',
+        }),
+    },
+    created() {
+        if (this.applicantData) {
+            this.applicant = this.applicantData
+            this.$store.dispatch('applicantForm/cancelApplicant')
+        }
     },
     mounted() {},
     methods: {

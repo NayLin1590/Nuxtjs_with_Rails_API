@@ -37,6 +37,7 @@ export default {
                 { key: 'operation', label: 'Operation' },
             ],
             showList: [],
+            resultList: [],
             infoModal: {
                 id: 'info-modal',
                 title: '',
@@ -53,9 +54,8 @@ export default {
         },
     },
     mounted() {
-        this.filterPostList()
+        this.selectAllApplicant()
     },
-
     methods: {
         /**
          * search form submit and filter applicant list
@@ -70,13 +70,22 @@ export default {
             })
         },
         /**
+         * select all applicant from database
+         */
+        selectAllApplicant() {
+            this.$axios.get('/api/applicants').then((res) => {
+                this.resultList = res.data
+                this.showList = this.resultList
+            })
+        },
+        /**
          * get the value form search input form and filter applicant list
          */
         filterPostList() {
             if (this.form.searchParam === '') {
-                this.showList = this.applicantList
+                this.showList = this.resultList
             } else {
-                this.showList = this.applicantList.filter((applicant) => {
+                this.showList = this.resultList.filter((applicant) => {
                     return (
                         applicant.name
                             .toLowerCase()
@@ -114,14 +123,7 @@ export default {
                     .then((resp) => {
                         if (resp) {
                             // this.showList.splice(index, 1)\
-                            this.$store
-                                .dispatch('applicantInfo/fetchPostList', {
-                                    $axios: this.$axios,
-                                })
-                                .then((data) => {
-                                    this.showList = data
-                                })
-                                .catch((err) => console.log(err))
+                            this.selectAllApplicant()
                         }
                     })
                     .catch((error) => {

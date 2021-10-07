@@ -11,12 +11,12 @@ export default {
             .post('/api/applicants/validate', applicantData)
             .then((data) => {
                 if (data) {
+                    this.$router.push({
+                        path: 'applicantForm/confirmData',
+                    })
                     commit(SET_APPLICANT_DATA, applicantData)
                     commit(SET_VALIDATE_ERROR, null)
                 }
-                this.$router.push({
-                    path: 'applicantForm/confirmData',
-                })
             })
             .catch((err) => {
                 commit(SET_VALIDATE_ERROR, err.response.data)
@@ -47,5 +47,11 @@ export default {
         } catch (error) {
             console.error(error)
         }
+    },
+    /**
+     *
+     */
+    cancelApplicant({ commit }) {
+        commit(SET_APPLICANT_DATA, null)
     },
 }

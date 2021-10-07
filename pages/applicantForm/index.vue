@@ -7,7 +7,10 @@
                     <ValidationProvider
                         v-slot="{ errors }"
                         name="Name"
-                        rules="required|max:100"
+                        :rules="{
+                            required: true,
+                            max: this.onezerozero,
+                        }"
                     >
                         <b-form-group
                             id="input-group-2"
@@ -46,7 +49,6 @@
                             </span>
                         </b-form-group>
                     </ValidationProvider>
-                    <!-- <b-img :src="applicant.profilePhoto"> </b-img> -->
                     <ValidationProvider
                         v-slot="{ errors }"
                         name="Date Of Birth"
@@ -135,7 +137,10 @@
                     <ValidationProvider
                         v-slot="{ errors }"
                         name="Current Address"
-                        rules="required|max:250"
+                        :rules="{
+                            required: true,
+                            max: this.twofivezero,
+                        }"
                     >
                         <b-form-group
                             label="Current Address:"
@@ -156,7 +161,9 @@
                     <ValidationProvider
                         v-slot="{ errors }"
                         name="Hometown Address"
-                        rules="max:250"
+                        :rules="{
+                            max: this.twofivezero,
+                        }"
                     >
                         <b-form-group
                             label="Hometown Address:"
@@ -183,7 +190,10 @@
                             <ValidationProvider
                                 v-slot="{ errors }"
                                 name="Bachelor University"
-                                rules="required|max:250"
+                                :rules="{
+                                    required: true,
+                                    max: this.twofivezero,
+                                }"
                             >
                                 <b-form-group
                                     label="Bachelor University:"
@@ -204,7 +214,9 @@
                             <ValidationProvider
                                 v-slot="{ errors }"
                                 name="Bachelor Year"
-                                rules="max:250"
+                                :rules="{
+                                    max: this.twofivezero,
+                                }"
                             >
                                 <b-form-group
                                     label="Bachelor Year:"
@@ -225,7 +237,9 @@
                             <ValidationProvider
                                 v-slot="{ errors }"
                                 name="Bachelor Degree"
-                                rules="max:250"
+                                :rules="{
+                                    max: this.twofivezero,
+                                }"
                             >
                                 <b-form-group
                                     label="Bachelor Degree:"
@@ -251,7 +265,9 @@
                             <ValidationProvider
                                 v-slot="{ errors }"
                                 name="Master University"
-                                rules="max:250"
+                                :rules="{
+                                    max: this.twofivezero,
+                                }"
                             >
                                 <b-form-group
                                     label="Master University:"
@@ -272,7 +288,9 @@
                             <ValidationProvider
                                 v-slot="{ errors }"
                                 name="Master Year"
-                                rules="max:250"
+                                :rules="{
+                                    max: this.twofivezero,
+                                }"
                             >
                                 <b-form-group
                                     label="Master Year:"
@@ -293,7 +311,9 @@
                             <ValidationProvider
                                 v-slot="{ errors }"
                                 name="Master Degree"
-                                rules="max:250"
+                                :rules="{
+                                    max: this.twofivezero,
+                                }"
                             >
                                 <b-form-group
                                     label="Master Degree:"
@@ -314,7 +334,9 @@
                     <ValidationProvider
                         v-slot="{ errors }"
                         name="Diploma Name"
-                        rules="max:250"
+                        :rules="{
+                            max: this.twofivezero,
+                        }"
                     >
                         <b-form-group
                             label="Diploma Name:"
@@ -333,7 +355,9 @@
                     <ValidationProvider
                         v-slot="{ errors }"
                         name="Certificate"
-                        rules="max:250"
+                        :rules="{
+                            max: this.twofivezero,
+                        }"
                     >
                         <b-form-group
                             label="Certificate:"
@@ -358,7 +382,9 @@
                             <ValidationProvider
                                 v-slot="{ errors }"
                                 name="Programming Language"
-                                rules="max:250"
+                                :rules="{
+                                    max: this.twofivezero,
+                                }"
                             >
                                 <b-form-group
                                     label="Programming Language:"
@@ -379,7 +405,9 @@
                             <ValidationProvider
                                 v-slot="{ errors }"
                                 name="Programming Level"
-                                rules="max:250"
+                                :rules="{
+                                    max: this.twofivezero,
+                                }"
                             >
                                 <b-form-group
                                     label="Programming Level:"
@@ -400,7 +428,9 @@
                     <ValidationProvider
                         v-slot="{ errors }"
                         name="English Skill"
-                        rules="max:250"
+                        :rules="{
+                            max: this.twofivezero,
+                        }"
                     >
                         <b-form-group
                             label="English Language Skill:"
@@ -420,7 +450,9 @@
                     <ValidationProvider
                         v-slot="{ errors }"
                         name="Japanes skill"
-                        rules="max:250"
+                        :rules="{
+                            max: this.twofivezero,
+                        }"
                     >
                         <b-form-group
                             label="Japanese Language Skill:"
@@ -440,7 +472,9 @@
                     <ValidationProvider
                         v-slot="{ errors }"
                         name="Other Language"
-                        rules="max:250"
+                        :rules="{
+                            max: this.twofivezero,
+                        }"
                     >
                         <b-form-group
                             label="Other Language Skill:"
@@ -467,7 +501,9 @@
                     <ValidationProvider
                         v-slot="{ errors }"
                         name="Internship Info"
-                        rules="max:250"
+                        :rules="{
+                            max: this.twofivezero,
+                        }"
                     >
                         <b-form-group
                             label="Internship Info:"
@@ -488,7 +524,9 @@
                     <ValidationProvider
                         v-slot="{ errors }"
                         name="Job Experience"
-                        rules="max:250"
+                        :rules="{
+                            max: this.twofivezero,
+                        }"
                     >
                         <b-form-group
                             label="Job Experience:"
