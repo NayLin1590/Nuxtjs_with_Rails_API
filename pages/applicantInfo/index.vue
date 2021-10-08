@@ -1,10 +1,11 @@
 <template>
     <b-container>
         <b-row class="my-4">
-            <b-col lg="5">
+            <b-col lg="5" md="5" sm="5">
                 <h2>Applicant List</h2>
             </b-col>
-            <b-col>
+            <b-col lg="2" md="1" sm="2"></b-col>
+            <b-col lg="4" md="6" sm="4" class="ml-5">
                 <b-form
                     v-if="show"
                     inline
@@ -62,11 +63,7 @@
                 >
                     Details
                 </b-button>
-                <b-button
-                    class="mr-1"
-                    size="sm"
-                    @click="edit(row.item, row.index, $event.target)"
-                >
+                <b-button class="mr-1" size="sm" @click="edit(row.item.id)">
                     Edit
                 </b-button>
                 <b-button

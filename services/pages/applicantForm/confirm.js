@@ -10,7 +10,7 @@ export default {
             applicantData: 'applicantForm/applicantData',
         }),
     },
-    mounted() {
+    created() {
         if (this.applicantData == null) {
             this.$router.push('/applicantForm')
         }
@@ -22,8 +22,6 @@ export default {
          */
         cancelApplicant() {
             this.$router.push('/applicantForm')
-            // history.back()
-            // this.$store.dispatch('applicantForm/cancelApplicant')
         },
         /**
          * if applicant confirm , create new applicant
@@ -37,12 +35,20 @@ export default {
                     formData.append(key, value)
                 })
             }
-            formData.append(
-                'programming',
-                this.applicantData.programmingLang +
-                    ' : ' +
-                    this.applicantData.programmingLevel
-            )
+            if (
+                this.applicantData.programmingLang &&
+                this.applicantData.programmingLevel
+            ) {
+                formData.append(
+                    'programming',
+                    this.applicantData.programmingLang +
+                        ' : ' +
+                        this.applicantData.programmingLevel
+                )
+            } else {
+                formData.append('programming', '')
+            }
+
             formData.append(
                 'profilePhoto',
                 this.applicantData.profilePhoto.name

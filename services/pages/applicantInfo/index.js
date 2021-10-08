@@ -61,7 +61,6 @@ export default {
          * search form submit and filter applicant list
          */
         onSubmitSearch() {
-            console.log('hello')
             this.filterPostList()
             // Trick to reset/clear native browser form validation state
             this.show = false
@@ -107,8 +106,15 @@ export default {
             this.infoModal.title = ''
             this.infoModal.content = ''
         },
-        edit(item, index, button) {
-            console.log('@edit...')
+        /**
+         * change edit route when onclick edit btn
+         * @param {number} id the applicant id to retrieve applicant data
+         */
+        edit(id) {
+            this.$router.push({
+                name: 'applicantInfo-edit-id',
+                params: { id },
+            })
         },
 
         /**
