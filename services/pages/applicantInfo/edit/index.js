@@ -56,8 +56,6 @@ export default {
         ValidationObserver,
         ValidationProvider,
     },
-
-    auth: false,
     data() {
         return {
             applicant: {

@@ -12,6 +12,11 @@
 <script>
 export default {
     auth: false,
+    middleware({ store, redirect }) {
+        if (!store.state.applicantData) {
+            return redirect('/applicantForm')
+        }
+    },
 }
 </script>
 

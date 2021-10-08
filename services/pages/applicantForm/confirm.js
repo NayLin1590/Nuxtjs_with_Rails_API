@@ -2,6 +2,11 @@ import { mapGetters } from 'vuex'
 
 export default {
     auth: false,
+    middleware({ store, redirect }) {
+        if (!store.state.applicantData) {
+            return redirect('/applicantForm')
+        }
+    },
     data() {
         return {}
     },
@@ -11,9 +16,9 @@ export default {
         }),
     },
     created() {
-        if (this.applicantData == null) {
-            this.$router.push('/applicantForm')
-        }
+        // if (this.applicantData == null) {
+        //     this.$router.push('/applicantForm')
+        // }
     },
     methods: {
         /**
