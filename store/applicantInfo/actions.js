@@ -25,24 +25,4 @@ export default {
                 commit(SET_APPLICANT_DETAIL, data)
             })
     },
-
-    // updateApplicant({ commit }, { applicant, $axios }) {
-    //     try {
-    //         $axios
-    //             .post('/api/applicants/update', applicant)
-    //             .then((data) => {
-    //                 if (data) {
-    //                     this.$router.push({
-    //                         name: 'applicantForm-done',
-    //                     })
-    //                     commit(SET_APPLICANT_DATA, null)
-    //                 }
-    //             })
-    //             .catch((err) => {
-    //                 console.log(err)
-    //             })
-    //     } catch (error) {
-    //         console.error(error)
-    //     }
-    // },
 }

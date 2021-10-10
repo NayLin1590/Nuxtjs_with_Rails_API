@@ -8,7 +8,6 @@
         </NuxtLink>
     </b-container>
 </template>
-
 <script>
 export default {
     auth: false,

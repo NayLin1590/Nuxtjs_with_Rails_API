@@ -97,11 +97,20 @@ export default {
                 })
             }
         },
+        /**
+         * to show data in infobox when click detail btn
+         * @param {object} item applicant data
+         * @param {number}  index array index
+         * @param {Event} button onclick event
+         */
         info(item, index, button) {
             this.infoModal.title = `Row index: ${index}`
             this.infoModal.content = JSON.stringify(item, null, 2)
             this.$root.$emit('bv::show::modal', this.infoModal.id, button)
         },
+        /**
+         * reset title and content when hide info modal
+         */
         resetInfoModal() {
             this.infoModal.title = ''
             this.infoModal.content = ''
